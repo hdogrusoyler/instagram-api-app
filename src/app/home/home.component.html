@@ -1,0 +1,28 @@
+<mat-toolbar fxLayoutAlign="flex-end center">
+  <!-- <button mat-stroked-button (click)="onClose()"><mat-icon>clear</mat-icon></button> -->
+</mat-toolbar>
+
+<div class="example-container">
+  <form [formGroup]="form" (ngSubmit)="onUpdateData()">
+    <div gdcolumns="repeat(2, 1fr)" gdRows="repeat(2, 1fr)" gdRows.lt-md="repeat(3, 1fr)" gdGap="0px 20px">
+      <mat-form-field appearance="fill" gdColumn="1 / span 2" gdRow="1">
+        <mat-label>Id</mat-label>
+        <!-- <input matInput formControlName="id"> -->
+      </mat-form-field>
+      <mat-form-field appearance="fill" gdColumn="1" gdRow="2" gdColumn.lt-md="1 / span 2" gdRow.lt-md="2">
+        <mat-label>Client Id</mat-label>
+        <input matInput formControlName="client_id">
+      </mat-form-field>
+      <mat-form-field appearance="fill" gdColumn="2" gdRow="2" gdColumn.lt-md="1 / span 2" gdRow.lt-md="3">
+        <mat-label>Client Secret</mat-label>
+        <input matInput formControlName="client_secret">
+      </mat-form-field>
+    </div>
+    <mat-toolbar>
+      <mat-toolbar-row fxLayoutAlign="flex-end center" fxLayoutGap="10px">
+        <button type="submit" mat-raised-button [disabled]="form.invalid"> <mat-icon>update</mat-icon> Submit </button>{{'   '}}
+        <!-- <button type="button" mat-raised-button (click)="onClose()"> <mat-icon>close</mat-icon> Close </button> -->
+      </mat-toolbar-row>
+    </mat-toolbar>
+  </form>
+</div>
