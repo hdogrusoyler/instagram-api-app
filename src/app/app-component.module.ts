@@ -6,15 +6,15 @@ import { ContentComponent } from './content/content.component';
 
 @NgModule({
   declarations: [
-    HomeComponent,
-    ContentComponent
+    // HomeComponent,
+    // ContentComponent
   ],
   imports: [
     CommonModule
   ],
   exports:[
-    HomeComponent,
-    ContentComponent
+    // HomeComponent,
+    // ContentComponent
   ]
 })
 export class AppComponentModule { }

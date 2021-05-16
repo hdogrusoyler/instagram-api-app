@@ -18,6 +18,7 @@ import { MatSortModule } from '@angular/material/sort';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatListModule } from '@angular/material/list';
 
+import { MatSliderModule } from '@angular/material/slider';
 
 const material = [
   MatMenuModule,
@@ -35,7 +36,9 @@ const material = [
   MatPaginatorModule,
   MatSortModule,
   MatCheckboxModule,
-  MatListModule
+  MatListModule,
+
+  MatSliderModule
 ]
 
 @NgModule({

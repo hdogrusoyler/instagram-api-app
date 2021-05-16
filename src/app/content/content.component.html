@@ -1,1 +1,61 @@
-<p>content works!</p>
+<hr />
+
+<div>
+  <form [formGroup]="bearerForm" (ngSubmit)="onUpdateBearerData()">
+    <div>
+      <mat-form-field appearance="fill" fxLayout="row">
+        <mat-label>Client Id</mat-label>
+        <input matInput formControlName="client_id" />
+      </mat-form-field>
+      <mat-form-field appearance="fill" fxLayout="row">
+        <mat-label>Client Secret</mat-label>
+        <input matInput formControlName="client_secret" />
+      </mat-form-field>
+    </div>
+    <mat-toolbar>
+      <mat-toolbar-row>
+        <button type="submit" mat-raised-button [disabled]="bearerForm.invalid">
+          <mat-icon>update</mat-icon> Submit
+        </button>
+      </mat-toolbar-row>
+    </mat-toolbar>
+  </form>
+</div>
+
+<div>
+  <!-- <p>{{ resultBearerModel.token_type }}</p>
+  <p>{{ resultBearerModel.access_token }}</p> -->
+</div>
+
+<hr />
+
+<div>
+  <form [formGroup]="tokenForm" (ngSubmit)="onUpdateTokenData()">
+    <div>
+      <mat-form-field appearance="fill" fxLayout="row">
+        <mat-label>Client Id</mat-label>
+        <input matInput formControlName="client_id" />
+      </mat-form-field>
+      <mat-form-field appearance="fill" fxLayout="row">
+        <mat-label>Access_token</mat-label>
+        <input matInput formControlName="access_token" />
+      </mat-form-field>
+    </div>
+    <mat-toolbar>
+      <mat-toolbar-row>
+        <button type="submit" mat-raised-button [disabled]="tokenForm.invalid">
+          <mat-icon>update</mat-icon> Submit
+        </button>
+      </mat-toolbar-row>
+    </mat-toolbar>
+  </form>
+</div>
+
+<div *ngIf="resultTokenModel && resultTokenModel.data[0]">
+  <p>access_token</p>
+  <p>{{ resultTokenModel.data[0].access_token }}</p>
+  <!-- <p>{{ resultTokenModel.paging.cursors.before }}</p>
+  <p>{{ resultTokenModel.paging.cursors.after }}</p> -->
+</div>
+
+<hr />

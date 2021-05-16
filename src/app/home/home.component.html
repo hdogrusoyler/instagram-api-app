@@ -4,25 +4,60 @@
 
 <div class="example-container">
   <form [formGroup]="form" (ngSubmit)="onUpdateData()">
-    <div gdcolumns="repeat(2, 1fr)" gdRows="repeat(2, 1fr)" gdRows.lt-md="repeat(3, 1fr)" gdGap="0px 20px">
-      <mat-form-field appearance="fill" gdColumn="1 / span 2" gdRow="1">
+    <div
+      gdcolumns="repeat(2, 1fr)"
+      gdRows="repeat(2, 1fr)"
+      gdRows.lt-md="repeat(3, 1fr)"
+      gdGap="0px 20px"
+    >
+      <!-- <mat-form-field appearance="fill" gdColumn="1 / span 2" gdRow="1">
         <mat-label>Id</mat-label>
-        <!-- <input matInput formControlName="id"> -->
-      </mat-form-field>
-      <mat-form-field appearance="fill" gdColumn="1" gdRow="2" gdColumn.lt-md="1 / span 2" gdRow.lt-md="2">
+        <input matInput formControlName="id">
+      </mat-form-field> -->
+      <mat-form-field
+        appearance="fill"
+        gdColumn="1"
+        gdRow="2"
+        gdColumn.lt-md="1 / span 2"
+        gdRow.lt-md="2"
+      >
         <mat-label>Client Id</mat-label>
-        <input matInput formControlName="client_id">
+        <input matInput formControlName="client_id" />
       </mat-form-field>
-      <mat-form-field appearance="fill" gdColumn="2" gdRow="2" gdColumn.lt-md="1 / span 2" gdRow.lt-md="3">
+      <mat-form-field
+        appearance="fill"
+        gdColumn="2"
+        gdRow="2"
+        gdColumn.lt-md="1 / span 2"
+        gdRow.lt-md="3"
+      >
         <mat-label>Client Secret</mat-label>
-        <input matInput formControlName="client_secret">
+        <input matInput formControlName="client_secret" />
       </mat-form-field>
     </div>
     <mat-toolbar>
       <mat-toolbar-row fxLayoutAlign="flex-end center" fxLayoutGap="10px">
-        <button type="submit" mat-raised-button [disabled]="form.invalid"> <mat-icon>update</mat-icon> Submit </button>{{'   '}}
+        <button type="submit" mat-raised-button [disabled]="form.invalid">
+          <mat-icon>update</mat-icon> Submit</button
+        >{{ "   " }}
         <!-- <button type="button" mat-raised-button (click)="onClose()"> <mat-icon>close</mat-icon> Close </button> -->
       </mat-toolbar-row>
     </mat-toolbar>
   </form>
+</div>
+
+<div>
+  <div fxLayout="row" *ngIf="resultModel.token_type" gdGap="0px 20px">
+    <div><p>token_type:</p></div>
+    <div>
+      <p>{{ resultModel.token_type }}</p>
+    </div>
+  </div>
+  
+  <div fxLayout="row" *ngIf="resultModel.access_token" gdGap="0px 20px">
+    <div><p>access_token:</p></div>
+    <div>
+      <p>{{ resultModel.access_token }}</p>
+    </div>
+  </div>
 </div>

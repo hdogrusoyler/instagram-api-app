@@ -12,14 +12,17 @@ import { AppComponent } from './app.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { AppMaterialModule } from './app-material.module';
 import { AppComponentModule } from './app-component.module';
-
+import { HomeComponent } from './home/home.component';
+import { ContentComponent } from './content/content.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HomeComponent,
+    ContentComponent
   ],
   imports: [
-    BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
+    BrowserModule, //.withServerTransition({ appId: 'ng-cli-universal' }),
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule, 
@@ -28,7 +31,7 @@ import { AppComponentModule } from './app-component.module';
     FlexLayoutModule,
     AppMaterialModule,
     AppRoutingModule,
-    AppComponentModule,
+    // AppComponentModule,
   ],
   providers: [
     // { provide: HTTP_INTERCEPTORS, useClass: LoginInterceptor, multi: true }
